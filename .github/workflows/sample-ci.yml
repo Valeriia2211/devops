@@ -18,8 +18,11 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build and Push Docker image
-      uses: docker/build-push-action@v4
-      with:
-        push: true
-        tags: achkasv22/lab2:latest
+  uses: docker/build-push-action@v4
+  with:
+    context: ./Lab2
+    file: ./Lab2/Dockerfile
+    push: true
+    tags: achkasv22/lab2:latest
+
 
